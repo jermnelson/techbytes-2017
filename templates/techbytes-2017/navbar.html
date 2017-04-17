@@ -1,0 +1,21 @@
+<div class="header clearfix">
+  <nav>
+    <ul class="nav nav-pills float-right">
+      <li class="nav-item">
+        <a class="nav-link {% if active=='home' %}active{% endif %}" 
+            href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if active=='pages' %}active{% endif %}" href="#">Pages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <h3 class="text-muted">TechBytes - 4 May 2017</h3>
+</div>
+

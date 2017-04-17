@@ -1,0 +1,15 @@
+{% extends 'techbytes-2017/base.html' %}
+
+{% block main %}
+<h1 class="du-color-red">{{ page.meta.title }}</h1>
+<div class="row marketing">
+    <section class="col-md-4">
+        <h3 class="du-bk-color-gold">About</h3>
+        {{ page.meta.description }}
+    </section>
+    <article class="col-md-8">
+        {{ page.html|safe }}
+
+    </article>
+</div>
+{% endblock %}
