@@ -5,17 +5,25 @@
         <a class="nav-link {% if active=='home' %}active{% endif %}" 
             href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link {% if active=='pages' %}active{% endif %}" href="#">Pages</a>
+      <li class="nav-item dropdown">
+         <a class="dropdown-toggle nav-link {% if active=='pages' %}active{% endif %}" 
+            data-toggle="dropdown" href="#">Pages</a>
+         <div class="dropdown-menu">
+             {% for page in presentation %}
+             <a class="dropdown-item" href="{{ url_for('page', path=page.path) }}">
+                {{ page.title }}
+             </a>
+             {% endfor %}
+         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link {% if active=='about' %}active{% endif %}" href="{{ url_for('about') }}">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link {% if active=='contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a>
       </li>
     </ul>
   </nav>
-  <h3 class="text-muted">TechBytes - 4 May 2017</h3>
+  <h3 class="text-muted">TechBytes <i class="fa fa-terminal" aria-hidden="true"></i> 4 May 2017</h3>
 </div>
 

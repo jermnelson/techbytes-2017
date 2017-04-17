@@ -26,3 +26,15 @@ def page(path):
         presentation=presentation,
         previous_page=prev_page,
         next_page=next_page)
+
+@app.route("/about")
+def about():
+    return render_template("techbytes-2017/about.html",
+        active="about",
+        presentation=presentation)
+
+@app.route("/contact")
+def contact():
+    return render_template("techbytes-2017/contact.html",
+        active="contact",
+        presentation=presentation)

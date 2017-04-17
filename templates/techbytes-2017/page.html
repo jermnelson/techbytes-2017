@@ -1,15 +1,31 @@
 {% extends 'techbytes-2017/base.html' %}
 
 {% block main %}
-<h1 class="du-color-red">{{ page.meta.title }}</h1>
+<div class="jumbotron">
+    <h1 class="du-color-red display-3">{{ page.meta.title }}</h1>
+</div>
 <div class="row marketing">
     <section class="col-md-4">
-        <h3 class="du-bk-color-gold">About</h3>
+        <h3 class="du-bk-color-gold center">About</h3>
         {{ page.meta.description }}
     </section>
     <article class="col-md-8">
         {{ page.html|safe }}
 
     </article>
+</div>
+<div class="btn-group" role="group" aria-label="Page Navigation">
+    {% if previous_page %}
+    <a href="{{ url_for('page', path=previous_page.path) }}" class="btn btn-sm btn-danger">
+        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        {{ previous_page.title }}
+    </a>
+    {% endif %}
+    {% if next_page %}
+    <a href="{{ url_for('page', path=next_page.path) }}" class="btn btn-sm btn-success">
+        {{ next_page.title }}
+        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+    </a>
+    {% endif %}
 </div>
 {% endblock %}
