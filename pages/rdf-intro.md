@@ -1,5 +1,6 @@
 title: Introduction to RDF
 description: Introducing (RDF) that is made of 3-part subject, predicate, object statements called triples. The big shift for libraries is going from managing MARC records to managing RDF triples
+downloads: du-knowledge-graph.ttl
 order: 0
 
 Linked Data in libraries is constructed using Resource Description Framework (RDF) graphs, 

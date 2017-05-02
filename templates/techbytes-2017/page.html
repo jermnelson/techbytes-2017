@@ -8,11 +8,22 @@
     <section class="col-md-4">
         <h3 class="du-bk-color-gold center">About</h3>
         {{ page.meta.description }}
+        {% if page.meta.downloads %}
+        <hr>
+        <h4>Downloads</h4>
+        <ul>
+            {% for filename in page.meta.downloads.split(",") %}
+            {% set path = 'rdf/' + filename %}
+            <li><a href="{{ url_for('static', filename=path) }}">{{ filename }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </section>
     <article class="col-md-8">
         {{ page.html|safe }}
 
     </article>
+    
 </div>
 <div class="btn-group" role="group" aria-label="Page Navigation">
     {% if previous_page %}
