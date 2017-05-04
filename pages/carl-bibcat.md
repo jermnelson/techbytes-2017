@@ -153,7 +153,13 @@ library's catalog.
 ## Build-Measure-Learn (BML) Iteration Two
 Taking the lessons learned from the first BML iteration, we decided on a couple of changes
 to the project for the second BML iteration for this project in the current **BUILD** phase
-of this second iteration. 
+of this second iteration. We are improving Geo support by integrating the local HTML 
+Geo API in the browser to rank all BIBFRAME Items in the BIBFRAME Instance web display.  
+
+To assist in testing, a third partner has been added to the pilot, 
+[SUNY Buffalo State](http://suny.buffalostate.edu/) which requires some slight integration
+with their [Summon](http://www.proquest.com/products-services/The-Summon-Service.html)
+discovery layer.
 
 ### Build
 We decided to stop
