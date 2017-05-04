@@ -4,8 +4,7 @@ order: 2
 
 One of the most popular metadata vocabularies is [schema.org][SCHEMA], a RDF vocabulary that was 
 originally founded by Google, Microsoft, Pinterest, and others, as a way to provide structured
-data on the Internet. [Schema.org][SCHEMA] encourages the use of [microdata](https://en.wikipedia.org/wiki/Microdata_(HTML))
-to directly embedded metadata within the HTML of a webpage. [Schema.org][SCHEMA] also has a robust extension process
+data on the Internet. [Schema.org][SCHEMA] also has a robust extension process
 with officially sponsored vocabularies that extend [schema.org][SCHEMA] into other knowledge domains. The Library community
 has an official extension [bib.schema.org](http://bib.schema.org/) that includes library-specific classes like 
 [Audiobook](http://bib.schema.org/Audiobook), [Collection](http://bib.schema.org/Collection), [Newspaper](http://bib.schema.org/Newspaper),
@@ -15,6 +14,10 @@ and [Thesis](http://bib.schema.org/Thesis). Other extensions include [automobile
 [Schema.org][SCHEMA] has a hierarchy of classes with [Thing](http://schema.org/Thing) being the most 
 basic entity with such subclasses as [Book](http://schema.org/Book), [Movie](http://schema.org/Movie), 
 [Event](http://schema.org/Event), [Organization](http://schema.org/Organization), [Person](http://schema.org/Person)
+
+[Schema.org][SCHEMA] encourages the use of [microdata](https://en.wikipedia.org/wiki/Microdata_(HTML))
+to directly embedded metadata within the HTML of a webpage. Below is an example of the previous
+page's BIBFRAME example represented as microdata:
 
 <pre><code>&lt;div itemscope="" itemtype="http://schema.org/Book"&gt;
     &lt;h1 itemprop="name"&gt;
@@ -28,7 +31,21 @@ basic entity with such subclasses as [Book](http://schema.org/Book), [Movie](htt
  &lt;/div&gt;
 </code></pre>
 
-## Using [Schema.org][SCHEMA] in Library Applications
+The same example in RDF Turtle Format:
+<pre><code>@prefix schema: &lt;http://schema.org/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+&lt;https://catalog.coloradocollege.edu/3506720#Work&gt; a schema:Book ;
+    schema:author &lt;https://catalog.coloradocollege.edu/3506720#Agent100-9&gt; ;
+    schema:name "Contemporary pottery techniques in Southern and Central Mexico /" .
+
+&lt;https://catalog.coloradocollege.edu/3506720#Agent100-9&gt; a schema:Person ;
+    schema:name "George M. Foster" .</code></pre>
+
+## Using [Schema.org][SCHEMA] in a Library Application
 A web-based application at Colorado College allows senors to self-submit 
 their thesis along with any accompanying datasets, video, or audio to Colorado College's 
 [Fedora-based institutional repository](https://digitalccbeta.coloradocollege.edu). This
@@ -45,8 +62,8 @@ Below are Colorado College RDF Files that make Knowledge Graph for the 2016-2017
    on administrators, faculty and staff.
 *  [cc-2016-2017.ttl][CC2016_2017] - Triples for the academic year, associates the departments 
    and link to the faculty and rank (professor, associate professor, adjunct, etc.) 
-
  
+
 [SCHEMA]: http://schema.org/
 [CCBASE]: https://github.com/Tutt-Library/tiger-catalog/blob/master/custom/colorado-college.ttl
 [CCPEOPLE]: https://github.com/Tutt-Library/tiger-catalog/blob/master/custom/cc-people.ttl
