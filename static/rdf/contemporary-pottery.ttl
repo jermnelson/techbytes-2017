@@ -1,0 +1,149 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix bflc: <http://id.loc.gov/ontologies/bflc/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/3506720#Item> a bf:Item ;
+    bf:heldBy <https://www.coloradocollege.edu/library/> ;
+    bf:itemOf <http://example.org/3506720#Instance> .
+
+<http://example.org/3506720#Agent100-9> a bf:Agent,
+        bf:Person ;
+    rdfs:label "Foster, George M. (George McClelland), 1913-2006." ;
+    bflc:name00MarcKey "1001 $aFoster, George M.$q(George McClelland),$d1913-2006." ;
+    bflc:name00MatchKey "Foster, George M. (George McClelland), 1913-2006." ;
+    bflc:primaryContributorName00MatchKey "Foster, George M. (George McClelland), 1913-2006." .
+
+<http://example.org/3506720#Agent710-16> a bf:Agent,
+        bf:Organization ;
+    rdfs:label "Tulane University. Middle American Research Institute." ;
+    bflc:name10MarcKey "7102 $aTulane University.$bMiddle American Research Institute." ;
+    bflc:name10MatchKey "Tulane University. Middle American Research Institute." .
+
+<http://example.org/3506720#Topic650-15> a bf:Topic,
+        madsrdf:ComplexSubject ;
+    rdfs:label "Pottery--Mexico." ;
+    bf:source [ a bf:Source ;
+            bf:code "lcsh" ] ;
+    madsrdf:authoritativeLabel "Pottery--Mexico." ;
+    madsrdf:componentList ( [ a madsrdf:Topic ;
+                madsrdf:authoritativeLabel "Pottery" ] [ a madsrdf:Geographic ;
+                madsrdf:authoritativeLabel "Mexico" ] ) ;
+    madsrdf:isMemberofMADSScheme <http://id.loc.gov/authorities/subjects> .
+
+<http://example.org/3506720#Work> a bf:Text,
+        bf:Work ;
+    rdfs:label "Contemporary pottery techniques in Southern and Central Mexico /" ;
+    bf:adminMetadata [ a bf:AdminMetadata ;
+            bflc:encodingLevel [ a bflc:EncodingLevel ;
+                    bf:code "u" ] ;
+            bf:changeDate "1998-05-02T18:31:57"^^xsd:dateTime ;
+            bf:creationDate "1977-12-21"^^xsd:date ;
+            bf:descriptionConventions [ a bf:DescriptionConventions ;
+                    bf:code "isbd" ] ;
+            bf:descriptionModifier [ a bf:Agent ;
+                    rdfs:label "OCL" ],
+                [ a bf:Agent ;
+                    rdfs:label "FUV" ],
+                [ a bf:Agent ;
+                    rdfs:label "UIU" ] ;
+            bf:identifiedBy [ a bf:Local ;
+                    rdf:value "3506720" ] ;
+            bf:source [ a bf:Agent,
+                        bf:Source ;
+                    rdfs:label "HDC" ],
+                [ a bf:Agent,
+                        bf:Source ;
+                    rdfs:label "HDC" ],
+                [ a bf:Source ;
+                    bf:code "OCoLC" ] ;
+            bf:status [ a bf:Status ;
+                    bf:code "c" ] ] ;
+    bf:contribution [ a bf:Contribution ;
+            bf:agent <http://example.org/3506720#Agent710-16> ;
+            bf:role <http://id.loc.gov/vocabulary/relators/ctb> ],
+        [ a bflc:PrimaryContribution,
+                bf:Contribution ;
+            bf:agent <http://example.org/3506720#Agent100-9> ;
+            bf:role <http://id.loc.gov/vocabulary/relators/ctb> ] ;
+    bf:genreForm <http://id.loc.gov/vocabulary/marcgt/bib> ;
+    bf:hasInstance <http://example.org/3506720#Instance> ;
+    bf:hasSeries <http://example.org/3506720#Work830-17> ;
+    bf:language <http://id.loc.gov/vocabulary/languages/eng> ;
+    bf:seriesEnumeration "22, pt. 1" ;
+    bf:subject <http://example.org/3506720#Topic650-15> ;
+    bf:title [ a bf:Title ;
+            rdfs:label "Contemporary pottery techniques in Southern and Central Mexico /" ;
+            bflc:titleSortKey "Contemporary pottery techniques in Southern and Central Mexico /" ;
+            bf:mainTitle "Contemporary pottery techniques in Southern and Central Mexico" ] .
+
+<http://example.org/3506720#Work830-17> a bf:Work ;
+    rdfs:label "Publication (Tulane University. Middle American Research Institute) ;" ;
+    bf:title [ a bf:Title ;
+            rdfs:label "Publication (Tulane University. Middle American Research Institute) ;" ;
+            bflc:title30MarcKey "830 0$aPublication (Tulane University. Middle American Research Institute) ;$v22, pt. 1." ;
+            bflc:title30MatchKey "Publication (Tulane University. Middle American Research Institute) ;" ;
+            bflc:titleSortKey "Publication (Tulane University. Middle American Research Institute) ;" ;
+            bf:mainTitle "Publication (Tulane University. Middle American Research Institute)" ] .
+
+<http://id.loc.gov/vocabulary/countries/lau> a bf:Place .
+
+<http://id.loc.gov/vocabulary/issuance/mono> a bf:Issuance .
+
+<http://id.loc.gov/vocabulary/languages/eng> a bf:Language .
+
+<http://id.loc.gov/vocabulary/marcgt/bib> a bf:GenreForm ;
+    rdfs:label "bibliography" .
+
+<http://id.loc.gov/vocabulary/millus/ill> a bf:Illustration ;
+    rdfs:label "illustrations" .
+
+<http://id.loc.gov/vocabulary/millus/map> a bf:Illustration ;
+    rdfs:label "maps" .
+
+<http://id.loc.gov/vocabulary/millus/plt> a bf:Illustration ;
+    rdfs:label "plates" .
+
+<http://example.org/3506720#Instance> a bf:Instance ;
+    rdfs:label "Contemporary pottery techniques in Southern and Central Mexico /" ;
+    bf:dimensions "27 cm." ;
+    bf:extent [ a bf:Extent ;
+            rdfs:label "35 p., 6 leaves of plates" ] ;
+    bf:illustrativeContent <http://id.loc.gov/vocabulary/millus/ill>,
+        <http://id.loc.gov/vocabulary/millus/map>,
+        <http://id.loc.gov/vocabulary/millus/plt> ;
+    bf:instanceOf <http://example.org/3506720#Work> ;
+    bf:issuance <http://id.loc.gov/vocabulary/issuance/mono> ;
+    bf:note [ a bf:Note ;
+            rdfs:label "ill., map (fold.)" ;
+            bf:noteType "Physical details" ],
+        [ a bf:Note ;
+            rdfs:label "Bibliography: p. 33." ;
+            bf:noteType "bibliography" ] ;
+    bf:provisionActivity [ a bf:ProvisionActivity,
+                bf:Publication ;
+            bf:agent [ a bf:Agent ;
+                    rdfs:label "Tulane University" ] ;
+            bf:date "1955" ;
+            bf:place [ a bf:Place ;
+                    rdfs:label "New Orleans" ] ],
+        [ a bf:ProvisionActivity,
+                bf:Publication ;
+            bf:date "1955"^^<http://id.loc.gov/datatypes/edtf> ;
+            bf:place <http://id.loc.gov/vocabulary/countries/lau> ] ;
+    bf:provisionActivityStatement "New Orleans : Tulane University, 1955." ;
+    bf:responsibilityStatement "George M. Foster" ;
+    bf:seriesEnumeration "no. 22 pt. 1." ;
+    bf:seriesStatement "Tulane University. Middle American Research Institute. Publication." ;
+    bf:supplementaryContent [ a bf:SupplementaryContent ;
+            rdfs:label "Index present" ] ;
+    bf:title [ a bf:Title ;
+            rdfs:label "Contemporary pottery techniques in Southern and Central Mexico /" ;
+            bflc:titleSortKey "Contemporary pottery techniques in Southern and Central Mexico /" ;
+            bf:mainTitle "Contemporary pottery techniques in Southern and Central Mexico" ] .
+
+<http://id.loc.gov/vocabulary/relators/ctb> a bf:Role .
+
